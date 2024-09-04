@@ -1,0 +1,65 @@
+total = int(input("How many contacts? "))
+phone = {}
+for i in range(total):
+    det = {}
+    name = input("Enter name: ")
+    phNo = int(input("Enter num: "))
+    mail = input("Enter email: ")
+    det['phNo'] = phNo
+    det['mail'] = mail
+    phone[name] = det
+
+print(phone)
+cont = True
+while cont:
+    choice = int(input("what do you want to do? \n1. Add \n2. Search \n3. Update \n4. Delete \n5. Exit: "))
+    if choice == 1:
+        det = {}
+        nm1 = input("Enter name: ")
+        phNo1 = int(input("Enter num: "))
+        ml1 = input("Enter mail: ")
+        det['phNo'] = phNo1
+        det['mail'] = ml1
+        phone[nm1] = det
+        print("Updated: ", phone)
+        cont = True
+
+    elif choice == 2:
+        name = input("Enter name to find: ")
+        if name in phone.keys():
+            print(phone[name])
+        else:
+            print("Name not in phonebook")
+        cont = True
+
+    elif choice == 3:
+        name = input("Enter name to update: ")
+        if name in phone.keys():
+            det2 = {}
+            phNo2 = int(input("Enter new num: "))
+            ml2 = input("Enter new mail: ")
+            det2['phNo'] = phNo2
+            det2['mail'] = ml2
+            phone[phNo2] = det2
+            print("Updated: ", phone)
+            cont = True
+
+        else:
+            print("Name not in phonebook")
+
+    elif choice == 4:
+        name = input("Enter name to delete: ")
+        if name in phone.keys():
+            del phone[name]
+            print(phone)
+        else:
+            print("Name not in phonebook")
+        cont = True
+
+    elif choice == 5:
+        print("Exiting")
+        cont = False
+
+    else:
+        print("Invalid")
+        cont = False
