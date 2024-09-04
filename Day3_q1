@@ -1,0 +1,11 @@
+math = {'Sara', 'Harry', 'Amy', 'Sasha', 'Yasha'}
+science = {'Ron', 'Yasha', 'Laila', 'Sara', 'Amar'}
+
+print("Math: ", math)
+print("Science: ", science)
+
+print()
+print("Both: ", math.intersection(science))
+print("Only Math: ", math.difference(science))
+print("Either Math or Science: ", math.union(science))
+print("Only Science: ", science.difference(math))
