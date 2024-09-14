@@ -1,0 +1,9 @@
+SQLite: is a lightweight, serverless, self-contained, and cross-platform database engine. Unlike other databases like MYSQL or PostgreSQL, it is embedded within the application that uses it, making it ideal for small to medium-sized application. It's used for storing data locally within the app, without the need for a separate server process.
+
+Key points to mention:
+. Serverless architecture: SQLite does not require a server to operate; it stores the entire database in a single file on disk.
+. Self-contained: It has minimal setup, with all the features of a relational database in a small library.
+. ACID compliance: SQLite supports full atomicity, consistency, isolation, and durability (ACID) properties, ensuring reliability.
+. Widely used: It's popular in embedded systems, mobile devices (like Android and iOS apps), and local desktop applications because of its small footprint.
+. SQL syntax: SQLite supports most of the SQL-92 standard, so it's familiar to developers used to working with SQL databases.
+Limitations: While it's efficient for small to medium apps, it's not ideal for high-concurrency environments or very large-scale applications.
