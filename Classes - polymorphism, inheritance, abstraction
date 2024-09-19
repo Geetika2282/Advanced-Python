@@ -1,0 +1,78 @@
+class MusicalInstruments:
+    _name = ''
+    _type = ''
+    _is_tuned = False
+
+    def __init__(self, name, type):
+        self._name = name
+        self._type = type
+
+    def play(self):
+        print(f"{self._name} is playing")
+
+    def tune(self):
+        print(f"{self._is_tuned} is tuned")
+        self._is_tuned = True
+
+    def check_tuning(self):
+        if self._is_tuned:
+            print(f"{self._name}: is tuned")
+        else:
+            print(f"{self._name}: is not tuned")
+
+    # getter for name
+    @property
+    def name(self):
+        return self._name
+
+    # setter for name
+    def name(self, value):
+        if isinstance(value, str) and value.isalpha():
+            self._name = value
+
+    @property
+    def type(self):
+        return self._type
+
+    @property
+    def type(self, value):
+        if isinstance(value, str):
+            self._type = value
+
+    @property
+    def is_tuned(self):
+        return self._is_tuned
+
+    @property
+    def is_tuned(self, value):
+        if isinstance(value, bool):
+            self._is_tuned=value
+
+class Guitar(MusicalInstruments):
+    # overriding play method
+    def play(self):
+        print("Guitar is playing")
+
+class Piano(MusicalInstruments):
+    def play(self):
+        print("Piano is playing")
+
+
+class Drum(MusicalInstruments):
+    drum_size = 'Small'
+    def play(self):
+        print("Drum is playing")
+
+
+g = Guitar("Guitar", "String")
+g.tune()
+g.play()
+
+p = Piano("Piano", "Keyboard")
+p.tune()
+p.play()
+
+d = Drum("Drum", "Percussion")
+d.tune()
+d.play()
+
