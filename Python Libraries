@@ -1,0 +1,121 @@
+. bar charts
+. line 
+. histogram
+. pie chart etc.
+
+
+## Numpy - G
+-> NumPy is a fundamental library for scientific computing in python. Provides support for arrays, matrices, and many mathematical functions to operate on these data structures.
+-> Arrays 50 times faster than traditional python.
+-> Creating an array: arr = np.array([1, 2, 3, 4, 5])
+-> Famous functions:
+  # Array creation
+        - np.arrays(object, dtype=None): creates an array from a list/ tuple
+        - np.zeroes(shape, dtype=float)/ np.ones(shape, dtype=float): creates an array filled with zeroes/ ones
+        - np.arange([start, ]stop, [step, ]): creates an array with a sequence of numbers
+        - np.linspace(start, stop, num=50): creates an array with evenly spaced values between a strt and stop value
+  # Array operations
+        - np.reshape(arr, newshape): reshape an array without changing its data
+        - np.concatenate(a1, a2, ...), axis=0): joins 2 or more arrays along an axis
+        - np.split(ary, indices_or_sections, axis=0): splts array into sub arrays
+  # Mathematical functions 
+        - np.mean(a, axis=None, dtype=None, keepdims=False): Computes the mean of array elements. 
+        - np.median(, axis=None, dtype=None, out=None, ddof=0, keepdims=False): Computes the standard deviation. ddof specifies the delta degrees of freedom.)
+        - np.sum(a, axis=None, dtype=None, out=None, keepdims=False): Computes the sum of array elements.
+  # Statistical Functions
+        - np.min(a, axis=None, out=None, keepdims=False)
+        - np.max(a, axis=None, out=None, keepdims=False)
+        - np.percentile(a, q, axis=None, out=None, keepdims=False): Computes the q-th percentile of array elements. q is the percentile to compute.
+  # Linear Algebra
+        - np.dot(a, b)
+        - np.linalg.inv(a): Computes the inverse of a matrix a
+        - np.linalg.eig(a): Computes the eigenvalues and eigenvectors of a matrix a.
+  # Random number generation
+        - np.random.rand()
+        - np.random.randn(d0, d1, ..., dn)
+        - np.random.randint(low, high=None, size=None, dtype=int)
+
+## Scipy - G
+-> An open-source library built on top of NumPy, designed to handle advanced mathematical, scientific and engineering problems. Ideal for tasks like signal processing, image manipulation, and more.
+-> Important scipy functionalities:
+  # Optimization:
+        - scipy.optimize
+        - scipy.optimize.minimize(fun, x0, method='BFGS'): minimizes a scalor function using different algorithms.
+        - scipy.optimize.curve_fit(f, xdata, ydata): fits a curve to data.
+  # Linear ALgebra:
+        - scipy.linalg.inv(a): computes inverse of a matrix a
+        - scipy.linalg.det(a): determinant of matrix a
+        - scipy.linalg.eig(a): Computes the eigenvalues and right eigenvectors of a square matrix a.
+        - scipy.linalg.svd(a): Performs Singular Value Decomposition (SVD) of a matrix a.
+
+## Matplotlib - G
+-> Used for generating 2D plots and charts and integrates seamlessly with NumPy, Pandas, and other libraries.
+    import matplotlib.pyplot as plt
+  # Line Plot (plt.plot()):
+        - plt.plot(x, y, color='blue', linestyle='-', marker='o', label='Line Label')
+  # Bar chart (plt.bar()):
+        - plt.bar(x, heightOfBars_yaxis_, color='b', width=0.8)
+  # Pie chart(plt.pie()):
+        - plt.pie(sizes, labels=labels, colors=colors, autopct='%0.1f%%')
+  # Histogram (plt.hist()):
+        - plt.hist(data, bins, color='b', edgecolor='black')
+  # Scatter Plot(plt.scatter()):
+        - plt.scatter(x, y)
+  # Box Plot(plt.boxplot()):
+        - plt.boxplot(data)
+             
+## Pandas - A
+        -> pd.read_csv('filename If in same path else path')
+        -> pd.DataFrame(data)
+        -> df.drop(labels), labels -> name of rows or columns
+        -> selecting a column -> df[colmn]
+        -> filtering data -> df[df[condition]]
+        -> df.groupby(by) : used to split the data into groups based on certain criteria
+        -> df.sort_values(by)
+        -> df.concat(objs): concatenates DataFrames along a particular axis (vertically or horizontally), without considering relationships between columns or rows.
+
+# Sample DataFrames
+df3 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df4 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
+
+# Concatenate DataFrames along rows
+concatenated_df = pd.concat([df3, df4])
+
+print(concatenated_df)
+__Output__: 
+   A  B
+0  1  3
+1  2  4
+0  5  7
+1  6  8
+
+        -> df.merge(left, right)
+# Sample DataFrames
+df1 = pd.DataFrame({'key': ['A', 'B', 'C'], 'value1': [1, 2, 3]})
+df2 = pd.DataFrame({'key': ['A', 'B', 'D'], 'value2': [4, 5, 6]})
+
+# Merge DataFrames on the 'key' column
+merged_df = pd.merge(df1, df2, on='key', how='inner')  # Default is 'inner' join
+
+__Output__: 
+key  value1  value2
+0   A       1       4
+1   B       2       5
+
+
+## Plotly - A
+-> graphing library that enables interactive plotting and charting. It's particularly useful for creating visualizations for web applications as it integrates with Jupyter notebooks. Plotly's charts can be zoomed, panned, and hovered over for more detailed views.
+    # Key Features:
+         -> plotly.graph_objects: Core object-oriented interface for creating figures.
+         -> plotly.express: Simplified, high-level interface for quickly creating plots.
+         -> plotly.subplots: For creating subplots in a figure.
+     # Commonly used functions:
+         - px.line(): Creates a line chart.
+         - px.bar(): Creates a bar chart.
+         - px.pie(): Creates a pie chart.
+         - px.scatter(): Generates a scatter plot.
+         - px.histogram(): For creating histograms.
+
+
+## Seaborn - A
+->
