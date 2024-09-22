@@ -1,0 +1,129 @@
+class FoodItem:
+    def __init__(self, name, price, category):
+        self.name = name
+        self.category = category
+        self.price = price
+
+    # def total(self):
+    #     total = self.price * qty
+    #     return total
+
+    def display_info(self):
+        print(f"Name: {self.name} \nCategory: {self.category}")
+
+    def __str__(self):
+        return f"Food Item: {self.name}, Category: {self.category}, Price: {self.price}"
+
+
+class Customer:
+    def __init__(self, name, cust_id):
+        self.name = name
+        self.cust_id = cust_id
+        self.order_hist = []
+
+    def place_order(self, food_item, qty):
+        self.order_hist.append(food_item)
+
+    def __str__(self):
+        return f"Customer: {self.name} (ID: {self.cust_id})"
+
+class RegularCustomer(Customer):
+    def __init__(self, cust_id, name):
+        super().__init__(name, cust_id)
+        self.discount = 5
+
+    def place_order(self, food_item, qty):
+            discounted_price = food_item.price * qty * (1 - self.discount / 100)
+            print(f"Order placed: {food_item.name} x {qty} with discount. Total: {discounted_price}")
+
+
+class PremiumCustomer(Customer):
+    priority = True
+
+    def __init__(self, cust_id, name):
+        super().__init__(name, cust_id)
+        self.discount = 15
+
+    def place_order(self, food_item, qty):
+            discounted_price = food_item.price * qty * (1 - self.discount/ 100)
+            print(f"Order placed: {food_item.name} x {qty} with discount. Total: {discounted_price}")
+
+
+class Restaurant:
+    def __init__(self):
+        self.menu = []
+        self.customers = []
+
+    def add_food_item(self, food):
+        self.menu.append(food)
+
+    def add_cust_item(self, cust):
+        self.customers.append(cust)
+
+    def display_food(self):
+        for item in self.menu:
+            print(item)
+
+    def display_customer(self):
+        for customer in self.customers:
+            print(customer)
+
+
+pizza = FoodItem('Pizza', 200, 'Main Course')
+burger = FoodItem('Burger', 170, 'Main Course')
+icecream = FoodItem('Ice cream', 100, 'Desert')
+
+rc = RegularCustomer(1, 'John')
+pc = PremiumCustomer(2, 'Sara')
+
+rc.place_order(pizza, 2)
+pc.place_order(icecream, 3)
+
+r = Restaurant()
+print("Food items: ")
+r.add_food_item(pizza)
+r.add_food_item(burger)
+r.add_food_item(icecream)
+
+print("Customers: ")
+r.add_cust_item(rc)
+r.add_cust_item(pc)
+r.display_food()
+r.display_customer()
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class Book:
+#     num_of_copies = 0
+#     def __init__(self, title, author):
+#         self.title = title
+#         self.author = author
+#
+#     @classmethod
+#     def update_copies(cls, count):
+#         cls.num_of_copies += count
+#
+#     @staticmethod
+#     def print_msg():
+#         print("Books are a man's best friend ", Book.num_of_copies)
+#
+#     def __str__(self):
+#         return 'This is in __str__'
+#
+# b = Book('t', 'a')
+# Book.update_copies(5)
+# print(b)
+# Book.update_copies(-2)
+# print(b)
+# b.print_msg()
+#
