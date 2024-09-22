@@ -1,0 +1,52 @@
+# curly braces, removes repeated elements if any
+s1 = {1, 2, 3, 4, 5, 4}
+print(s1)
+
+# creating set using 'set' keyword
+s2 = set([1, 5, 4, 2, 1])
+print(s2)
+
+# can contain multiple datatypes
+s4 = {1, 2.0, True, 'four'}
+print(s4)
+
+# adding elements to set
+s4.add(9)
+print(s4)
+
+# removing from set
+s4.remove(9) # element value not index
+print(s4)
+
+# #Set Union
+set1 = {10, 2, 3}
+set2 = {3, 4, 7, 3}
+union_set = set1.union(set2)
+print("Set Union", union_set)
+
+#Set Intersection
+intersection_set = set1.intersection(set2)
+intersection_set = set1 & set2
+print("Set Intersection",intersection_set)
+
+#Set Difference
+print(set1)
+print(set2)
+difference_set = set2.difference(set1)
+print("Set Difference",difference_set)
+print("Set Symmetric Difference",set1.symmetric_difference(set2))
+
+
+#Removing duplicates
+my_list = [1, 2, 2, 3, 4, 4, 5]
+print(my_list)
+unique_elements = set(my_list)
+print(unique_elements)  # Output: {1, 2, 3, 4, 5}
+
+#accessing a single element in a set gives an error
+###my_set[0]
+
+#converting set to List
+my_set = {5, 2, 3, 1, 4}
+ordered_list = sorted(my_set)
+print(ordered_list)
