@@ -1,0 +1,43 @@
+t1 = (1, 2, 3)
+t2 = ('a', 'b', 'c')
+t3 = (1, 2, 3, 'g', True)
+t4 = ()
+t5 = (5, )
+
+# accessing 1st element
+print(t1[0])
+
+# accessing last element
+print(t1[-1])
+
+# slicing
+print(t3[:3])
+
+# combining tuples
+t13 = t1 + t3
+print(t13)
+
+t = (1, 2, 3)
+repeated_tuple = t*3
+print(repeated_tuple)
+
+# tuple unpacking
+a, b, c = t
+print(a)
+print(b)
+print(c)
+
+# counting occurrences
+c = t1.count(2)
+print(c)
+
+# # Converting List to Tuple and Vice Versa
+# my_list = [1, 2, 3]
+# my_tuple = tuple(my_list)  # Output: (1, 2, 3)
+# print(my_tuple)
+# my_new_list = list(my_tuple)
+# print(my_new_list)
+
+# # Immutability
+my_tuple = (1, 2, 3)
+my_tuple[0] = 10
