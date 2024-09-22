@@ -1,0 +1,60 @@
+import time
+import logging
+
+def log_execution(func):
+    def wrapper(*args, **kwargs):
+        print(f"Starting {func.__name__}..")
+        res = func(*args, **kwargs)
+        print(f"Finished {func.__name__}..")
+        return res
+    return wrapper
+
+def measure_time(func):
+    def wrapper(*args, **kwargs):
+        startTime = time.time()
+        res = func(*args, **kwargs)
+        endTime = time.time()
+        print(f"{func.__name__} took {endTime - startTime:.4f} seconds to execute.")
+        return res
+    return wrapper
+
+@log_execution
+@measure_time
+def process_data():
+    """Simulates a data processing task."""
+    time.sleep(2)  # Simulating a time-consuming task
+
+
+process_data()
+
+# ===================
+# LOGGING
+
+# Create a logger
+logger = logging.getLogger('Multiple handler logger')
+logger.setLevel(logging.DEBUG)
+
+# create a formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Create a file handler
+file_handler = logging.FileHandler('multiple_handler_logger.log')
+file_handler.setLevel(logging.DEBUG)  # Set the logging level for the file handler
+file_handler.setFormatter(formatter)  # Attach the formatter to the file handler
+
+
+# Create a console handler
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)  # Set the logging level for the console handler
+console_handler.setFormatter(formatter)  # Attach the formatter to the console handler
+
+# Add handlers to the logger
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+# Example log messages
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
