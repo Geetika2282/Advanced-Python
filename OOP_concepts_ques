@@ -1,0 +1,78 @@
+from abc import ABC, abstractmethod
+
+class SmartDevice(ABC):
+    _name = ''
+    _status = ''
+    def __init__(self, name):
+        self._name = name
+        self._status = 'OFF'
+
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    @abstractmethod
+    def turn_off(self):
+        pass
+
+    def device_info(self):
+        return f"Device: {self._name} and it is {self._status}"
+
+class SmartLight(SmartDevice):
+    total = []
+
+    def __init__(self, name):
+        super().__init__(name)
+    def turn_on(self):
+        self._status = 'ON'
+        print(f"{self._name} is now on")
+
+    def turn_off(self):
+        self._status = 'OFF'
+        print(f"{self._name} is now off")
+
+    def set_brightness(self, bright):
+        if 0 < bright < 100:
+            return (f"Brightness set to {bright}")
+
+
+    def __str__(self):
+        return f"{self._name}"
+
+    def all(self):
+        self.total.append(self.name)
+        return  self.total
+
+
+
+    # super()._status
+    # super()._name
+
+
+# sl = SmartLight('L1')
+# sl.turn_on()
+# sl.turn_off()
+#
+# print(sl.all())
+#
+# s2 = SmartLight('L2')
+# s2.turn_on()
+# s2.turn_off()
+# print(s2.all())
+
+def main():
+    devices = [
+        SmartLight("TV"),
+        SmartLight("Robot"),
+        SmartLight("Remote")
+        ]
+    bright = 40
+    for device in devices:
+        print(device.device_info())
+        (device.turn_on())
+        print(device.set_brightness(bright))
+        (device.turn_off())
+        print()
+
+if __name__ == '__main__':
+    main()
