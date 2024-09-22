@@ -1,0 +1,48 @@
+
+s1 = 'asd'
+s2 = "zdf"
+s3 = '''dsfsavfv
+Zcz'''
+
+# concatenation
+a = 'alpha'
+b = 'numeric'
+print(a+b)
+
+# repetition
+res = a*3
+print(res)
+
+# indexing
+a1 = a[0]
+
+# slicing
+a2 = a[:2]
+
+# length
+l = len(a)
+
+lower = a.lower()
+upper = a.upper()
+
+find = res.find('a')
+fR = res.replace('a', 'A')
+
+# # Joining
+#
+fruits = ['apple', 'banana', 'cherry']
+result = ", ".join(fruits)
+print(result)
+
+# ---------------------------------------------------#
+# String Formatting
+
+name = "Alice"
+age = 25
+# Using format() method
+result = "My name is {} and I am {} years old.".format(name, age)
+# Using f-string
+result_f = f"My name is {name} and I am {age} years old."
+print(result)   # Output: "My name is Alice and I am 25 years old."
+print(result_f)
+#
