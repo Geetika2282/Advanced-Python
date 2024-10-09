@@ -1,0 +1,63 @@
+
+### LISTS:
+- Mutable: Elements can be changed after creation.
+- Ordered collection of data: Maintains the insertion order.
+- append(): Adds a single item to the end of the list.
+- extend(): Adds multiple elements to the end of the list.
+- insert(): Inserts an item at a given position.
+- pop(): Removes the item at the given index and returns it (default is the last item).
+- remove(): Removes the first occurrence of a specified element.
+- sort(): Sorts the list in ascending order by default, can use `reverse=True` for descending.
+- reverse(): Reverses the order of elements in place.
+- len(): Returns the number of elements in the list.
+- list comprehension: A concise way to create lists using a for-loop.
+
+---
+
+### TUPLES:
+- Immutable: Once created, elements cannot be changed.
+- Ordered collection of data: Maintains insertion order.
+- can't add/delete: You cannot modify the size or content of the tuple after creation.
+- can access elements: You can access elements using indexing like `tuple[0]`.
+- tuple() constructor: Converts other iterables (like lists) into tuples.
+- len(): Returns the number of elements in the tuple.
+- Use cases: Typically used for fixed collections of items, or when immutability is needed.
+
+---
+
+### DICTIONARIES:
+- Key: value pairs: Keys are unique, values can be of any type.
+- Unordered: Python 3.7+ retains insertion order, but they are conceptually unordered.
+- Mutable: Can add, update, or remove key-value pairs.
+- keys(): Returns a list-like view of all keys.
+- values(): Returns a list-like view of all values.
+- items(): Returns a view object that displays a list of dictionary's key-value tuple pairs.
+- update(): Adds/updates key-value pairs from another dictionary or iterable.
+- pop(): Removes and returns the value of the specified key.
+- get(): Returns the value of the specified key, or `None` if the key doesnâ€™t exist.
+- clear(): Removes all elements from the dictionary.
+- del: Deletes a key-value pair or the entire dictionary.
+
+---
+
+### SET:
+- Unordered collection of elements: Does not maintain insertion order.
+- Unique items: Duplicates are not allowed.
+- Mutable: Can add or remove elements.
+- add(): Adds a single element to the set.
+- update(): Adds multiple elements (from an iterable like a list) to the set.
+- pop(): Removes and returns a random element (since sets are unordered, you canâ€™t choose).
+- remove(): Removes the specified element, raises an error if the element is not found.
+- discard(): Removes the specified element, does nothing if the element is not found.
+- union(): Returns a new set with all elements from both sets.
+- intersection(): Returns a new set with elements common to both sets.
+- difference(): Returns a set containing elements that are in the first set but not in the second.
+- subset(): Checks if one set is a subset of another.
+- frozenset: Immutable version of a set.
+
+---
+
+### Extra General Notes:
+- len(): Applies to all data structures above to return the number of elements.
+- in: Works with all data structures for checking membership (i.e., if an element exists).
+- for loops: Can be used to iterate through all these data structures.
