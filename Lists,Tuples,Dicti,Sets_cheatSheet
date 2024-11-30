@@ -11,6 +11,10 @@
 - reverse(): Reverses the order of elements in place.
 - len(): Returns the number of elements in the list.
 - list comprehension: A concise way to create lists using a for-loop.
+- The below code is to flatten lists
+lst=[[1,2],[3,4]]
+print(sum(lst,[]))
+>> output: [1, 2, 3, 4]
 
 ---
 
