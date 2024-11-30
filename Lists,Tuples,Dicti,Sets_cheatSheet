@@ -25,6 +25,7 @@ print(list1 is list2)
 >> output: 
 True   # for strings "Apple" pointing to the same object
 False  # for lists [1, 2, 3] pointing to different objects
+- unpack(*x) unpacks the list into the separate variables
 
 ---
 
